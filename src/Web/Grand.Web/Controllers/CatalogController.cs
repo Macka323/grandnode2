@@ -206,12 +206,13 @@ namespace Grand.Web.Controllers
             return View(layoutViewPath, model);
         }
         [HttpGet]
-        public virtual async Task<IActionResult> BrandAll()
+        public virtual async Task<IActionResult> BrandAll(BrandPagingModel command)
         {
             var model = await _mediator.Send(new GetBrandAll {
                 Customer = _workContext.CurrentCustomer,
                 Language = _workContext.WorkingLanguage,
-                Store = _workContext.CurrentStore
+                Store = _workContext.CurrentStore,
+                Command = command
             });
             return View(model);
         }
@@ -269,12 +270,13 @@ namespace Grand.Web.Controllers
             return View(layoutViewPath, model);
         }
         [HttpGet]
-        public virtual async Task<IActionResult> CollectionAll()
+        public virtual async Task<IActionResult> CollectionAll(CollectionPagingModel command)
         {
             var model = await _mediator.Send(new GetCollectionAll {
                 Customer = _workContext.CurrentCustomer,
                 Language = _workContext.WorkingLanguage,
-                Store = _workContext.CurrentStore
+                Store = _workContext.CurrentStore,
+                Command = command
             });
             return View(model);
         }
@@ -315,13 +317,13 @@ namespace Grand.Web.Controllers
             return View(model);
         }
         [HttpGet]
-        public virtual async Task<IActionResult> VendorAll()
+        public virtual async Task<IActionResult> VendorAll(VendorPagingModel command)
         {
             //we don't allow viewing of vendors if "vendors" block is hidden
             if (_vendorSettings.VendorsBlockItemsToDisplay == 0)
                 return RedirectToRoute("HomePage");
 
-            var model = await _mediator.Send(new GetVendorAll { Language = _workContext.WorkingLanguage });
+            var model = await _mediator.Send(new GetVendorAll { Language = _workContext.WorkingLanguage, Command = command });
             return View(model);
         }
 

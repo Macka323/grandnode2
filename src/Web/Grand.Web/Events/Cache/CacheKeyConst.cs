@@ -12,16 +12,6 @@ namespace Grand.Web.Events.Cache
         /// {2} : current store ID
         /// </remarks>
         public const string SEARCH_CATEGORIES_MODEL_KEY = "Grand.category-{0}-{1}-{2}.pres.search";
-        
-        /// <summary>
-        /// Key for List of BrandModel caching
-        /// </summary>
-        /// <remarks>
-        /// {0} : language id
-        /// {1} : comma separated list of customer groups
-        /// {2} : current store ID
-        /// </remarks>
-        public const string BRAND_ALL_MODEL_KEY = "Grand.brand.navigation.all-{0}-{1}-{2}.pres";
         /// <summary>
         /// Key for caching of brand displayed on home page
         /// </summary>
@@ -90,27 +80,11 @@ namespace Grand.Web.Events.Cache
         public const string COLLECTION_HAS_FEATURED_PRODUCTS_KEY = "Grand.productcollection.hasfeaturedproducts-{0}-{1}-{2}";
 
         /// <summary>
-        /// Key for List of CollectionModel caching
-        /// </summary>
-        /// <remarks>
-        /// {0} : language id
-        /// {1} : comma separated list of customer groups
-        /// {2} : current store ID
-        /// </remarks>
-        public const string COLLECTION_ALL_MODEL_KEY = "Grand.collection.navigation.all-{0}-{1}-{2}.pres";
-
-        /// <summary>
         /// Key for VendorNavigationModel caching
         /// </summary>
         public const string VENDOR_NAVIGATION_MODEL_KEY = "Grand.pres.vendor.navigation";
         public const string VENDOR_NAVIGATION_PATTERN_KEY = "Grand.pres.vendor.navigation";
 
-        /// <summary>
-        /// Key for List of VendorModel caching
-        /// </summary>
-        public const string VENDOR_ALL_MODEL_KEY = "Grand.pres.vendor.navigation.all";
-
-        
         /// <summary>
         /// Key for CategoryNavigationModel caching
         /// </summary>
